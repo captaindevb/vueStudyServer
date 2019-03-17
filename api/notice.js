@@ -20,13 +20,13 @@ const create = async (req, res) => {
 
 const detail = async (req, res) => {
     console.log('=========NOTICE DETAIL========')
-    console.log('req.params', req.params)//node에서 get 방식은 params
+    // console.log('req.params', req.params)//node에서 get 방식은 params
 
     //const noticeDetail = notice.findOne({ where: { id: req.params.noticeId }}) // 이렇게 쓰면 비동기
 
     const noticeDetail = await notice.findOne({ where: { id: req.params.noticeId }})
     
-    console.log('noticeDetail = ', noticeDetail)
+    // console.log('noticeDetail = ', noticeDetail)
 
     if ( !noticeDetail.dataValues ) res.status(401).end('NOT FOUND ID') //값 없으면. http 코드 상태 201정상 401에러
 
@@ -38,7 +38,7 @@ const list = async (req, res) => {
     
     const noticeList = await notice.findAll()
 
-    console.log('noticeList = ', noticeList);
+    // console.log('noticeList = ', noticeList);
 
    const noticeData = []
    
@@ -49,7 +49,7 @@ const list = async (req, res) => {
        //굳이 push안해줘도됨. ppt참고해서 해보기
    })
 
-   console.log(noticeData)
+//    console.log(noticeData)
 
    res.json({noticeData})
     
@@ -79,9 +79,20 @@ const modify = async (req, res) => {
    res.json({noticeId})
 }
 
+const destroy = async (req, res) => {
+    console.log('======delete======')
+    console.log('req.params = ', req.params)
+
+    await notice.destroy({ where: { id: req.params.noticeId }})
+
+    res.json({})
+}
+
+
 module.exports = {
     create,
     detail,
     list,
-    modify
+    modify,
+    destroy
 }

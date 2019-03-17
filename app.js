@@ -29,6 +29,10 @@ app.get('/notice', notice.list) //데이터 가져올때
 
 app.put('/notice/:noticeId', notice.modify) //put: update
 
+app.delete('/notice/:noticeId', notice.destroy) 
+
+//RestAPIs POST/GET/PUT/DELETE 
+
 //app.use(router)
 
 //app.use('/notice/register', (req, res) => {
