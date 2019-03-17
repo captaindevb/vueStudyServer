@@ -1,8 +1,8 @@
-# vueStudyServer
-vue.js + node.js study server side 
+# vueStudyServer<Br>
+vue.js + node.js study server side <Br><Br><Br>
 
 
 
-maria DB
-sequelize.js 
+maria DB<Br>
+sequelize.js <Br>
 rest API
