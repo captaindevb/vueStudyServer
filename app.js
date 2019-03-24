@@ -5,6 +5,7 @@ const cors = require('cors')()
 //const router = require('./router')
 const sequelize = require('./models').sequelize
 const notice = require('./api/notice')
+const auth = require('./api/auth')
 
 app.use(cors)
 
@@ -30,6 +31,8 @@ app.get('/notice', notice.list) //데이터 가져올때
 app.put('/notice/:noticeId', notice.modify) //put: update
 
 app.delete('/notice/:noticeId', notice.destroy) 
+
+app.post('/login', auth.login)
 
 //RestAPIs POST/GET/PUT/DELETE 
 

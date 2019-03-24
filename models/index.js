@@ -17,5 +17,6 @@ db.Sequelize = Sequelize;
 //최종적인 테이블 추가 해주는 곳
 
 db.notice = require('./notice')(sequelize, Sequelize) //즉시실행
+db.authLogin = require('./login')(sequelize, Sequelize)
 
 module.exports = db;
