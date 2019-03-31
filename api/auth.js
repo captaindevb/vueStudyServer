@@ -4,8 +4,8 @@ const login = async (req, res) => {
    console.log('==== LOGIN ====')
    console.log('req.body = ', req.body)
 
-   const email = req.body.data.username
-   const password = req.body.data.password
+   const email = req.body.userInfo.username //userInfo로 바꾼 이유 !! 리팩토링과정에서 바뀜 !! 
+   const password = req.body.userInfo.password
    
    const resLogin = await authLogin.findOne({
       attributes: [

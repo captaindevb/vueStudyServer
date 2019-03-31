@@ -18,5 +18,6 @@ db.Sequelize = Sequelize;
 
 db.notice = require('./notice')(sequelize, Sequelize) //즉시실행
 db.authLogin = require('./login')(sequelize, Sequelize)
+db.popup = require('./popup')(sequelize, Sequelize)
 
 module.exports = db;
