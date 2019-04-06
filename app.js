@@ -37,6 +37,8 @@ app.delete('/notice/:noticeId', notice.destroy)
 
 app.post('/login', auth.login)
 
+app.post('/registration', auth.join)
+
 app.post('/popup', upload.single('image'), require('./api/popup').create)
 //upload 는 미들웨어로 사용, 미들웨어는 NEXT를 보내야한다. 
 
@@ -48,16 +50,18 @@ app.post('/popup', upload.single('image'), require('./api/popup').create)
 //    console.log('=============notice==============')
 //})
 
-app.use((req, res, next) => {
-  res.status = 404
-  next(Error('not found'))
-})
+/*배포전 주석처리*/
+
+// app.use((req, res, next) => {
+//   res.status = 404
+//   next(Error('not found'))
+// })
   
-app.use((err, req, res, next) => {
-console.log(err)
-res.status(res.statusCode || 500)
-res.json({ error: err.message || 'internal server error' })
-})
+// app.use((err, req, res, next) => {
+// console.log(err)
+// res.status(res.statusCode || 500)
+// res.json({ error: err.message || 'internal server error' })
+// })
 
 app.listen(3000, () => {
     console.log("3000port 대기중!")
