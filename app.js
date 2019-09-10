@@ -7,6 +7,7 @@ const sequelize = require('./models').sequelize
 const notice = require('./api/notice')
 const auth = require('./api/auth')
 const upload = require('./api/upload')
+const popup = require('./api/popup')
 
 app.use(cors)
 
@@ -41,6 +42,8 @@ app.post('/registration', auth.join)
 
 app.post('/popup', upload.single('image'), require('./api/popup').create)
 //upload 는 미들웨어로 사용, 미들웨어는 NEXT를 보내야한다. 
+
+app.get('/popup', popup.list) //데이터 가져올때
 
 //RestAPIs POST/GET/PUT/DELETE 
 
