@@ -26,6 +26,9 @@ app.use(bodyParser.urlencoded(
 //항상 미들웨어 밑에 등록해주기
 app.use(express.static('public'))
 
+
+//게시판
+
 app.post('/notice', notice.create) //데이터 보낼때 
 
 app.get('/notice/:noticeId', notice.detail) // : params로 받을 수 있음.
@@ -36,14 +39,25 @@ app.put('/notice/:noticeId', notice.modify) //put: update
 
 app.delete('/notice/:noticeId', notice.destroy) 
 
-app.post('/login', auth.login)
 
-app.post('/registration', auth.join)
+//팝업
 
 app.post('/popup', upload.single('image'), require('./api/popup').create)
 //upload 는 미들웨어로 사용, 미들웨어는 NEXT를 보내야한다. 
 
-app.get('/popup', popup.list) //데이터 가져올때
+app.get('/popup', popup.list) 
+
+app.get('/popup/:popupId', popup.detail) 
+
+app.delete('/popup/:popupId', popup.destroy) 
+
+app.put('/popup/:popupId', upload.single('image'), require('./api/popup').modify) 
+
+
+//로그인
+app.post('/login', auth.login)
+
+app.post('/registration', auth.join)
 
 //RestAPIs POST/GET/PUT/DELETE 
 
