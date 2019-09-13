@@ -38,7 +38,7 @@ const list = async (req, res) => {
     
     const noticeList = await notice.findAll()
 
-    // console.log('noticeList = ', noticeList);
+    console.log('noticeList = ', noticeList);
 
    const noticeData = []
    
@@ -49,7 +49,7 @@ const list = async (req, res) => {
        //굳이 push안해줘도됨. ppt참고해서 해보기
    })
 
-//    console.log(noticeData)
+   console.log("=========noticeData===========", noticeData)
 
    res.json({noticeData})
     
