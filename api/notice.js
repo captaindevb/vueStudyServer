@@ -1,7 +1,7 @@
 const { notice } = require('../models')
 
 const create = async (req, res) => {
-    console.log('===== NOTICE REGISTER =====')
+    console.log('===== NOTICE REGISTER 게시판등록=====')
     console.log('req.body = ', req.body)
 
     const form = req.body.form
