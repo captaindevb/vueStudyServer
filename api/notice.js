@@ -14,6 +14,7 @@ const create = async (req, res) => {
     })
 
     console.log('register = ', register)
+    console.log('아이디값 내려주기', register.dataValues.id)
 
     res.status(201).json({noticeId:register.dataValues.id});
 }
