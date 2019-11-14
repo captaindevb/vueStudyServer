@@ -15,4 +15,8 @@ middleware 생성<Br>
 JWT Token 활용 Login 처리<Br>
 Node와 메모리DB Redis 연동하여 Session 생성<Br>
 sequelize.js <Br>
-rest API
+rest API<br>
+
+AWS Lightsail 앱 배포
+<br>
+http://15.164.101.68:3000/<br>
