@@ -19,4 +19,4 @@ rest API<br>
 
 AWS Lightsail 앱 배포
 <br>
-http://15.164.101.68:3000/<br>
+http://15.164.101.68:3000/<br> 
